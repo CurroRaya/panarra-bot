@@ -1,3 +1,4 @@
+import os
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 
@@ -10,7 +11,7 @@ def start(update, context):
 def main():
     """Inicio del Bot"""
     # Colocamos el Token creado por FatherBot
-    updater = Updater("932726420:AAE9Y0sNlgTG9_VOwAtJkU1DaodvFs4PLwI", use_context=True)
+    updater = Updater(os.environ['TOKEN'], use_context=True)
 
     # Es el Registro de Comandos a través del dispartcher
     dp = updater.dispatcher
