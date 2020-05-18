@@ -8,6 +8,15 @@ def start(update, context):
     update.message.reply_text("Hola, Panarra!")
 
 
+# Definimos algunas funciones para los comandos. Estos generalmente toman los dos argumentos update y context
+def help(update, context):
+    update.message.reply_text("Estos son los comandos que puedes usar para hacer tu pan casero:")
+    update.message.reply_text("/ayuda")
+    update.message.reply_text("/help")
+    update.message.reply_text("/new")
+    update.message.reply_text("/nuevo")
+
+
 def main():
     """Inicio del Bot"""
     # Colocamos el Token creado por FatherBot
@@ -18,7 +27,8 @@ def main():
 
     # Añadimos a la lista de Registro todos los comandos con su función [start - help - mayus]
     dp.add_handler(CommandHandler("start", start))
-    # dp.add_handler(CommandHandler("help", help))
+    dp.add_handler(CommandHandler("help", help))
+    dp.add_handler(CommandHandler("ayuda", help))
     # dp.add_handler(CommandHandler("mayus", mayus))
     #
     # dp.add_handler(MessageHandler(Filters.text, alreves))
